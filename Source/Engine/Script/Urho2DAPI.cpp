@@ -131,10 +131,13 @@ static void RegisterAnimation2D(asIScriptEngine* engine)
 
 static void RegisterAnimatedSprite2D(asIScriptEngine* engine)
 {
+    /*
+	// Alreay registered in AttributeAnimation
     engine->RegisterEnum("CycleMode");
     engine->RegisterEnumValue("CycleMode", "CM_LOOP", CM_LOOP);
     engine->RegisterEnumValue("CycleMode", "CM_CLAMP", CM_CLAMP);
     engine->RegisterEnumValue("CycleMode", "CM_PINGPONG", CM_PINGPONG);
+    */
 
     RegisterStaticSprite2D<AnimatedSprite2D>(engine, "AnimatedSprite2D");
     engine->RegisterObjectMethod("AnimatedSprite2D", "void set_speed(float)", asMETHOD(AnimatedSprite2D, SetSpeed), asCALL_THISCALL);
@@ -599,7 +602,7 @@ void RegisterUrho2DAPI(asIScriptEngine* engine)
     RegisterCollisionChain2D(engine);
     RegisterCollisionEdge2D(engine);
     RegisterCollisionPolygon2D(engine);
-    
+
     RegisterConstraint2D(engine);
     RegisterConstraintDistance2D(engine);
     RegisterConstraintFriction2D(engine);
